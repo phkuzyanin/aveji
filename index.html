@@ -4,26 +4,38 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="./css/main.css">
-	<link rel="stylesheet" href="./css/reset.css">
+
+	<link rel="stylesheet" href="./css/style.css">
+	
 	<title>Aveji</title>
 </head>
 <body>
-	<div class="container">
-		<header>
-			<img src="./img/logo.png" alt="" class="header__logo">
-			<nav class="header__nav">
-				<ul class="header__list">
-					<li><a href="">О нас</a></li>
-					<li><a href="">Проекты</a></li>
-					<li><a href="">Материалы</a></li>
-					<li><a href="">Отзывы</a></li>
-				</ul>
-			</nav>
-			<p class="header__phone">+7 999 999 99 99</p>
+		<header class="header container">
+				<img src="./img/logo.svg" alt="" class="header__logo">
+				<div class="header__links">
+					<nav class="header__nav">
+							<a href="">О нас</a>
+							<a href="">Проекты</a>
+							<a href="">Материалы</a>
+							<a href="">Отзывы</a>
+					</nav>
+					<p class="header__phone">+7 999 999 99 99</p>
+				</div>
 		</header>
-		<main class="none">
-			<section class="hero"></section>
+		<main class="main container">
+			<section class="hero">
+				<div class="hero__title">
+					<h1>Эксклюзивная и нестандартная мебель для дома</h1>
+					<a href="">ЗАКАЗАТЬ ПРОЕКТ</a>
+				</div>
+				<div class="hero__content">
+					<div class="hero__column">
+						<p class="hero__text">Мы можем произвести любую мебель для вашего проекта и найти производственное решение любой задумки.</p>
+						<img src="./img/hero-small.png" alt="">
+					</div>
+					<img src="./img/hero-big.png" alt="" class="hero__img">
+				</div>
+			</section>
 			<section class="about"></section>
 			<section class="steps"></section>
 			<section class="projects"></section>
@@ -31,6 +43,5 @@
 			<section class="form"></section>
 		</main>
 		<footer class="none"></footer>
-	</div>
 </body>
 </html>
