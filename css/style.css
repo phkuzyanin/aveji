@@ -26,7 +26,10 @@
 	flex-direction: column;
 	row-gap: 8px;
 }
-
+.nav__toggle{
+	display: none;
+	background-color: #fff;
+}
 .header a{
 	color: #212529;
 	font-family: Roboto;
@@ -43,6 +46,69 @@
 	font-size: 18px;
 	font-weight: 400;
 }
+
+
+
+.menu-icon-wrapper {
+/*   background: red; */
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-icon {
+  position: relative;
+  width: 30px;
+  height: 5px;
+  background-color: #000;
+}
+
+.menu-icon::before {
+  position: absolute;
+  left: 0;
+  top: -10px;
+  content: '';
+  width: 30px;
+  height: 5px;
+  background-color: #000;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+
+}
+
+.menu-icon::after {
+  position: absolute;
+  left: 17px;
+  top: 10px;
+  content: '';
+  width: 13px;
+  height: 5px;
+  background-color: #000;
+  transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+
+}
+
+.menu-icon.menu-icon-active {
+  transform: rotate(-45deg);
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
+.menu-icon.menu-icon-active::before {
+  transform: rotate(90deg);
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
+.menu-icon.menu-icon-active::after {
+  background-color: transparent;
+  transform: rotate(-45deg);
+  top: 0;
+  transition: top 0.2s linear, transform 0.2s ease-in 0.2s;
+}
+
+
+
 
 
 /* HERO */
@@ -289,7 +355,7 @@ p.steps__text{
 	font-size: 18px;
 	font-weight: 700;
 }
-.testimonials-card__content{
+.testimonials-card__text{
 	color: #212529;
 	font-family: Roboto;
 	text-align: center;
@@ -453,10 +519,94 @@ p.steps__text{
 	}
 	}
 @media (max-width: 1100px){
+	.container{
+		padding: 0 16px;
+	}
+	.header__nav{
+		display: none;
+	}
+	.nav__toggle{
+		display: block;
+		position: relative;
+		z-index: 2;
+	}
+	.nav--mobile .nav__toggle{
+		position: fixed;
+		top: 50px;
+		right: 50px;
+	}
+	.nav--mobile{
+		position: fixed;
+		left: 50%;
+		top: 0;
+		width: 50%;
+		height: 100%;
+		z-index: 99;
+		flex-direction: column;
+		align-items: center;
+		padding: 40px 0;
+		background: #fff;
+		outline: 3px solid #c29311;
+		padding-top: 30%;
+	
+	}
+	.nav--mobile .header__nav--mobile{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 40px;
+		font-size: 22px;
+
+	}
+	.header a{
+		font-size: 25px;
+		padding-bottom: 10px;
+	}
+	.header a:hover{
+		border: none;
+	}
+	.header__phone{
+		display: none;
+	}
 	.projects__images{
 		row-gap: 10px;
 	}
 	.projects__row{
 		column-gap: 10px;
+	}
+}
+@media (max-width: 900px){
+	.hero__title,
+	.about__title,
+	.about-card__title,
+	.steps__title,
+	.steps-card__title,
+	.projects__title,
+	.testimonials__title{
+		font-size: 30px;
+		max-width: 100%;
+	}
+	.about__text{
+		margin-bottom: 20px;
+	}
+	.steps__card{
+		flex-direction: column;
+		row-gap: 16px;
+		margin-bottom: 20px;
+	}
+	.projects__images{
+		display: none;
+	}
+	.testimonials__row{
+		flex-direction: column;
+		row-gap: 16px;
+	}
+	.testimonials__card{
+		padding: 32px;
+	}
+	.footer{
+		flex-direction: column-reverse;
+		row-gap: 24px;
+		text-align: center;
 	}
 }
