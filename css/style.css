@@ -314,6 +314,9 @@ p.steps__text{
 	width: auto;
 	max-width: 33%;
 }
+.slider{
+	display: none;
+}
 
 /*TESTIMONIALS*/
 .testimonials{
@@ -568,12 +571,24 @@ p.steps__text{
 	.header__phone{
 		display: none;
 	}
-	.projects__images{
-		row-gap: 10px;
+		.projects__images{
+		display: none;
 	}
-	.projects__row{
-		column-gap: 10px;
-	}
+	.slider{
+		display: block;
+		position: relative;
+		overflow: hidden;
+		width: 100%;
+}
+	.owl-item{
+		display: flex;
+		justify-content: center;
+}
+	.slider__item{
+		width: 252px;
+		height: 328px;
+		transition: 0.2s ease-in;
+}
 }
 @media (max-width: 900px){
 	.hero__title,
@@ -594,9 +609,7 @@ p.steps__text{
 		row-gap: 16px;
 		margin-bottom: 20px;
 	}
-	.projects__images{
-		display: none;
-	}
+
 	.testimonials__row{
 		flex-direction: column;
 		row-gap: 16px;
@@ -608,5 +621,18 @@ p.steps__text{
 		flex-direction: column-reverse;
 		row-gap: 24px;
 		text-align: center;
+	}
+
+}
+@media (max-width: 800px){
+	.slider{
+		width: 100%;
+		margin: auto;
+	}
+}
+@media (max-width: 600px){
+	.slider{
+		width: 252px;
+		margin: auto;
 	}
 }
